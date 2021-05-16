@@ -1,5 +1,5 @@
 {% set name = "grpc_java_plugin" %}
-{% set version = "1.37.0" %}
+{% set version = "1.37.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4796b6e434545ecc9e827f9ba52c0604a3c84e175c54f0882121965b1ee5c367
+  sha256: b40d70eee8666836a594c0d131ac134f4d0e1641a99c5c9658709a2c1f2b67fa
   patches:
     - 0001-Build-against-system-libprotobuf.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not osx]
 
 requirements:
