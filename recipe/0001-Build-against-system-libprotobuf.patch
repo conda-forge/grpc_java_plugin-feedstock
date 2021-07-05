@@ -1,4 +1,4 @@
-From 32f504bcf64a28e0ade2af9105c97f71e35ffbec Mon Sep 17 00:00:00 2001
+From d06f54a6273239917905454c7bd778d4b27d4abd Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
@@ -10,15 +10,15 @@ Subject: [PATCH] Build against system libprotobuf
  protobuf.WORKSPACE   |  37 ++++
  protobuf.bzl         | 436 +++++++++++++++++++++++++++++++++++++++++++
  protobuf_deps.bzl    |  65 +++++++
- repositories.bzl     |  11 +-
- 7 files changed, 666 insertions(+), 8 deletions(-)
+ repositories.bzl     |  10 +-
+ 7 files changed, 667 insertions(+), 6 deletions(-)
  create mode 100644 protobuf.BUILD
  create mode 100644 protobuf.WORKSPACE
  create mode 100644 protobuf.bzl
  create mode 100644 protobuf_deps.bzl
 
 diff --git a/WORKSPACE b/WORKSPACE
-index dad4842a7..41687d528 100644
+index dad4842..41687d5 100644
 --- a/WORKSPACE
 +++ b/WORKSPACE
 @@ -30,6 +30,6 @@ load("//:repositories.bzl", "grpc_java_repositories")
@@ -30,7 +30,7 @@ index dad4842a7..41687d528 100644
  
  protobuf_deps()
 diff --git a/compiler/BUILD.bazel b/compiler/BUILD.bazel
-index f88075c0e..3aa9f1030 100644
+index f88075c..3aa9f10 100644
 --- a/compiler/BUILD.bazel
 +++ b/compiler/BUILD.bazel
 @@ -12,6 +12,7 @@ cc_binary(
@@ -43,7 +43,7 @@ index f88075c0e..3aa9f1030 100644
  
 diff --git a/protobuf.BUILD b/protobuf.BUILD
 new file mode 100644
-index 000000000..8531d28f0
+index 0000000..8531d28
 --- /dev/null
 +++ b/protobuf.BUILD
 @@ -0,0 +1,122 @@
@@ -171,7 +171,7 @@ index 000000000..8531d28f0
 +) for proto in WELL_KNOWN_PROTO_MAP.items()]
 diff --git a/protobuf.WORKSPACE b/protobuf.WORKSPACE
 new file mode 100644
-index 000000000..81aa3e9d2
+index 0000000..81aa3e9
 --- /dev/null
 +++ b/protobuf.WORKSPACE
 @@ -0,0 +1,37 @@
@@ -214,7 +214,7 @@ index 000000000..81aa3e9d2
 +
 diff --git a/protobuf.bzl b/protobuf.bzl
 new file mode 100644
-index 000000000..8b3a16e7c
+index 0000000..8b3a16e
 --- /dev/null
 +++ b/protobuf.bzl
 @@ -0,0 +1,436 @@
@@ -656,7 +656,7 @@ index 000000000..8b3a16e7c
 +        fail("Bazel must be newer than 0.5.4")
 diff --git a/protobuf_deps.bzl b/protobuf_deps.bzl
 new file mode 100644
-index 000000000..a95008501
+index 0000000..a950085
 --- /dev/null
 +++ b/protobuf_deps.bzl
 @@ -0,0 +1,65 @@
@@ -726,28 +726,26 @@ index 000000000..a95008501
 +            urls = ["https://github.com/bazelbuild/rules_python/archive/4b84ad270387a7c439ebdccfd530e2339601ef27.tar.gz"],
 +        )
 diff --git a/repositories.bzl b/repositories.bzl
-index 3ed5291a8..40bbab71a 100644
+index ad50272..5c10c44 100644
 --- a/repositories.bzl
 +++ b/repositories.bzl
-@@ -104,14 +104,11 @@ def grpc_java_repositories():
-     )
- 
- def com_google_protobuf():
--    # proto_library rules implicitly depend on @com_google_protobuf//:protoc,
--    # which is the proto-compiler.
--    # This statement defines the @com_google_protobuf repo.
+@@ -107,11 +107,11 @@ def com_google_protobuf():
+     # proto_library rules implicitly depend on @com_google_protobuf//:protoc,
+     # which is the proto-compiler.
+     # This statement defines the @com_google_protobuf repo.
 -    http_archive(
+-        name = "com_google_protobuf",
+-        sha256 = "f6042eef01551cee4c663a11c3f429c06360a1f51daa9f4772bf3f13d24cde1f",
+-        strip_prefix = "protobuf-3.17.2",
+-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.17.2.zip"],
 +    native.new_local_repository(
-         name = "com_google_protobuf",
--        sha256 = "b37e96e81842af659605908a421960a5dc809acbc888f6b947bc320f8628e5b1",
--        strip_prefix = "protobuf-3.12.0",
--        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.12.0.zip"],
-+        path = ".",
-+        build_file = "./protobuf.BUILD",
-+        workspace_file = "./protobuf.WORKSPACE"
++	name = "com_google_protobuf",
++	path = ".",
++	build_file = "./protobuf.BUILD",
++	workspace_file = "./protobuf.WORKSPACE"
      )
  
  def com_google_protobuf_javalite():
 -- 
-2.24.3 (Apple Git-128)
+2.30.1 (Apple Git-130)
 
