@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-sed -i "" "s:\${BUILD_PREFIX}:${BUILD_PREFIX}:" protobuf.BUILD
+sed -i "s:\${BUILD_PREFIX}:${BUILD_PREFIX}:" protobuf.BUILD
 
 source gen-bazel-toolchain
 
