@@ -12,8 +12,8 @@ source:
     - 0001-Build-against-system-libprotobuf.patch
 
 build:
-  number: 1
-  skip: true  # [not osx]
+  number: 2
+  skip: true  # [win]
 
 requirements:
   build:
@@ -22,6 +22,7 @@ requirements:
     - bazel
     - bazel-toolchain
     - libprotobuf
+    - sed  # [osx]
   host:
     - libprotobuf
 
