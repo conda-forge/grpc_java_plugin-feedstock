@@ -20,7 +20,9 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - bazel
+    - bazel-toolchain
     - libprotobuf
+    - sed  # [osx]
   host:
     - libprotobuf
 
