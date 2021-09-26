@@ -19,7 +19,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - bazel
+    - bazel >=4.1
     - bazel-toolchain
     - libprotobuf
     - sed  # [osx]
