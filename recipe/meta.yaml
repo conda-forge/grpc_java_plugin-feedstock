@@ -1,16 +1,29 @@
-{% set name = "grpc_java_plugin" %}
-{% set version = "1.41.0" %}
+# {% set name = "grpc_java_plugin" %}
+# {% set version = "1.41.0" %}
+
+# package:
+#   name: {{ name|lower }}
+#   version: {{ version }}
+
+{% set name = "textattack" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
+# source:
+#   url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
+#   sha256: 2c4194117805d43414c03288bdab9c137201d21f6caf6785062eaf5256d99d4e
+#   patches:
+#     - 0001-Build-against-system-libprotobuf.patch
+
 source:
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2c4194117805d43414c03288bdab9c137201d21f6caf6785062eaf5256d99d4e
+  url: https://github.com/QData/{{ name|title }}/archive/v{{ version }}.tar.gz
+  sha256: d6603831130516484fa1047f58c67a3da06201f435a9e0dcc9a6d61366d1a865
   patches:
     - 0001-Build-against-system-libprotobuf.patch
-    
+
 #test
 build:
   number: 0
@@ -29,7 +42,7 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/bin/grpc_java_plugin
+    # - test -f $PREFIX/bin/grpc_java_plugin
 
 about:
   home: https://github.com/grpc/grpc-java/tree/master/compiler
