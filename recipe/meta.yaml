@@ -10,7 +10,8 @@ source:
   sha256: 2c4194117805d43414c03288bdab9c137201d21f6caf6785062eaf5256d99d4e
   patches:
     - 0001-Build-against-system-libprotobuf.patch
-
+    
+#test
 build:
   number: 0
   skip: true  # [win]
