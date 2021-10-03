@@ -11,10 +11,6 @@ source:
     sha256: 2c4194117805d43414c03288bdab9c137201d21f6caf6785062eaf5256d99d4e
     patches:
       - 0001-Build-against-system-libprotobuf.patch
-  - url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 340091bf58b05c1a7d4cae5c60d6acde7e82ce24f67d09a16638fe894c0e233f
-    patches:
-      - 0001-Build-against-system-libprotobuf.patch
   - url: https://github.com/bazelbuild/bazel/releases/download/{{ bazel_version }}/bazel_nojdk-{{ bazel_version }}-darwin-x86_64  # [build_platform == "osx-64"]
     sha256: df204b5fdd93571eeb9aea48b8d2328ae39ed0f27f137c5c0d9281d6145d2f21  # [build_platform == "osx-64"]
     fn: bazel  # [build_platform == "osx-64"]
