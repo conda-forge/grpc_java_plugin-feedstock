@@ -1,5 +1,5 @@
 {% set name = "grpc_java_plugin" %}
-{% set version = "1.41.0" %}
+{% set version = "1.42.0" %}
 {% set bazel_version = "4.2.1" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 2c4194117805d43414c03288bdab9c137201d21f6caf6785062eaf5256d99d4e
+    sha256: 1289abd750bee2ebc80679435301e046d587bdf0c0802a76907119725d18eef0
     patches:
       - 0001-Build-against-system-libprotobuf.patch
   - url: https://github.com/bazelbuild/bazel/releases/download/{{ bazel_version }}/bazel_nojdk-{{ bazel_version }}-darwin-x86_64  # [build_platform == "osx-64"]
@@ -22,7 +22,7 @@ source:
     fn: bazel  # [build_platform == "linux-64"]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
