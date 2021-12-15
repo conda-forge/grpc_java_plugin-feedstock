@@ -1,34 +1,38 @@
-From d06f54a6273239917905454c7bd778d4b27d4abd Mon Sep 17 00:00:00 2001
+From dc27f7bc39f4a5da864fb75dc9d3dd51f7e4cf6a Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
 
 ---
- WORKSPACE            |   2 +-
+ WORKSPACE            |   4 +-
  compiler/BUILD.bazel |   1 +
  protobuf.BUILD       | 122 ++++++++++++
  protobuf.WORKSPACE   |  37 ++++
  protobuf.bzl         | 436 +++++++++++++++++++++++++++++++++++++++++++
- protobuf_deps.bzl    |  65 +++++++
- repositories.bzl     |  10 +-
- 7 files changed, 667 insertions(+), 6 deletions(-)
+ protobuf_deps.bzl    |  76 ++++++++
+ repositories.bzl     |  12 +-
+ 7 files changed, 681 insertions(+), 7 deletions(-)
  create mode 100644 protobuf.BUILD
  create mode 100644 protobuf.WORKSPACE
  create mode 100644 protobuf.bzl
  create mode 100644 protobuf_deps.bzl
 
 diff --git a/WORKSPACE b/WORKSPACE
-index dad4842..41687d5 100644
+index b619857..afce7fd 100644
 --- a/WORKSPACE
 +++ b/WORKSPACE
-@@ -30,6 +30,6 @@ load("//:repositories.bzl", "grpc_java_repositories")
+@@ -16,8 +16,10 @@ load("//:repositories.bzl", "grpc_java_repositories")
  
  grpc_java_repositories()
  
--load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+-load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
+ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
++load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 +load("//:protobuf_deps.bzl", "protobuf_deps")
++load("//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
  
  protobuf_deps()
+ 
 diff --git a/compiler/BUILD.bazel b/compiler/BUILD.bazel
 index f88075c..3aa9f10 100644
 --- a/compiler/BUILD.bazel
@@ -656,13 +660,24 @@ index 0000000..8b3a16e
 +        fail("Bazel must be newer than 0.5.4")
 diff --git a/protobuf_deps.bzl b/protobuf_deps.bzl
 new file mode 100644
-index 0000000..a950085
+index 0000000..155a02e
 --- /dev/null
 +++ b/protobuf_deps.bzl
-@@ -0,0 +1,65 @@
+@@ -0,0 +1,76 @@
 +"""Load dependencies needed to compile the protobuf library as a 3rd-party consumer."""
 +
 +load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
++
++PROTOBUF_MAVEN_ARTIFACTS = [
++    "com.google.code.findbugs:jsr305:3.0.2",
++    "com.google.code.gson:gson:2.8.6",
++    "com.google.errorprone:error_prone_annotations:2.3.2",
++    "com.google.j2objc:j2objc-annotations:1.3",
++    "com.google.guava:guava:30.1.1-jre",
++    "com.google.truth:truth:1.1.2",
++    "junit:junit:4.12",
++    "org.easymock:easymock:3.2",
++]
 +
 +def protobuf_deps():
 +    """Loads common dependencies needed to compile the protobuf library."""
@@ -726,26 +741,28 @@ index 0000000..a950085
 +            urls = ["https://github.com/bazelbuild/rules_python/archive/4b84ad270387a7c439ebdccfd530e2339601ef27.tar.gz"],
 +        )
 diff --git a/repositories.bzl b/repositories.bzl
-index ad50272..5c10c44 100644
+index 712e34f..48d318e 100644
 --- a/repositories.bzl
 +++ b/repositories.bzl
-@@ -107,11 +107,11 @@ def com_google_protobuf():
+@@ -96,12 +96,12 @@ def com_google_protobuf():
      # proto_library rules implicitly depend on @com_google_protobuf//:protoc,
      # which is the proto-compiler.
      # This statement defines the @com_google_protobuf repo.
 -    http_archive(
 -        name = "com_google_protobuf",
--        sha256 = "f6042eef01551cee4c663a11c3f429c06360a1f51daa9f4772bf3f13d24cde1f",
--        strip_prefix = "protobuf-3.17.2",
--        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.17.2.zip"],
+-        sha256 = "25f1292d4ea6666f460a2a30038eef121e6c3937ae0f61d610611dfb14b0bd32",
+-        strip_prefix = "protobuf-3.19.1",
+-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.19.1.zip"],
+-    )
 +    native.new_local_repository(
 +	name = "com_google_protobuf",
 +	path = ".",
 +	build_file = "./protobuf.BUILD",
 +	workspace_file = "./protobuf.WORKSPACE"
-     )
++     )
  
  def com_google_protobuf_javalite():
+     # java_lite_proto_library rules implicitly depend on @com_google_protobuf_javalite
 -- 
-2.30.1 (Apple Git-130)
+2.32.0 (Apple Git-132)
 
