@@ -1,3 +1,7 @@
+bot:
+  abi_migration_branches:
+  - 1.37.x
+  automerge: true
 build_platform:
   linux_aarch64: linux_64
   linux_ppc64le: linux_64
@@ -5,8 +9,7 @@ build_platform:
 conda_forge_output_validation: true
 os_version:
   linux_64: cos7
+provider:
+  linux_aarch64: default
+  linux_ppc64le: default
 test_on_native_only: true
-bot:
-  automerge: true
-  abi_migration_branches:
-    - "1.37.x"
