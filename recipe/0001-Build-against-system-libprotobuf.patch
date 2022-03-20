@@ -1,4 +1,4 @@
-From dc27f7bc39f4a5da864fb75dc9d3dd51f7e4cf6a Mon Sep 17 00:00:00 2001
+From 10d0e1f2000b539e3cbedcaae55963ad1048b68e Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
@@ -741,7 +741,7 @@ index 0000000..155a02e
 +            urls = ["https://github.com/bazelbuild/rules_python/archive/4b84ad270387a7c439ebdccfd530e2339601ef27.tar.gz"],
 +        )
 diff --git a/repositories.bzl b/repositories.bzl
-index 712e34f..48d318e 100644
+index 8ad5f10..4dba105 100644
 --- a/repositories.bzl
 +++ b/repositories.bzl
 @@ -96,12 +96,12 @@ def com_google_protobuf():
@@ -750,9 +750,9 @@ index 712e34f..48d318e 100644
      # This statement defines the @com_google_protobuf repo.
 -    http_archive(
 -        name = "com_google_protobuf",
--        sha256 = "25f1292d4ea6666f460a2a30038eef121e6c3937ae0f61d610611dfb14b0bd32",
--        strip_prefix = "protobuf-3.19.1",
--        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.19.1.zip"],
+-        sha256 = "9ceef0daf7e8be16cd99ac759271eb08021b53b1c7b6edd399953a76390234cd",
+-        strip_prefix = "protobuf-3.19.2",
+-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.19.2.zip"],
 -    )
 +    native.new_local_repository(
 +	name = "com_google_protobuf",
