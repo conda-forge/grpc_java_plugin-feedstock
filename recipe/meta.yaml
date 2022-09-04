@@ -49,3 +49,5 @@ about:
 extra:
   recipe-maintainers:
     - xhochy
+    - conda-forge/bazel
+    - conda-forge/grpc-cpp
