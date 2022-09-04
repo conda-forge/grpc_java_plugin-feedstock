@@ -1,5 +1,11 @@
 BUILD:
 - aarch64-conda_cos7-linux-gnu
+bazel_arch:
+- linux-x86_64
+bazel_sha:
+- cbccf5c02d404b4d3fdcc347e8cf1fc9a40e232905a1a8745499a82bdfaf00af
+bazel_version:
+- 4.2.1
 c_compiler:
 - gcc
 c_compiler_version:
