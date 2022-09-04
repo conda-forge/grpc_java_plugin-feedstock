@@ -1,9 +1,8 @@
-{% set name = "grpc_java_plugin" %}
 {% set version = "1.47.0" %}
 {% set bazel_version = "4.2.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: grpc_java_plugin
   version: {{ version }}
 
 source:
