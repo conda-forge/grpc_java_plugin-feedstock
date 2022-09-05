@@ -1,0 +1,17 @@
+bazel_version:
+  - 4.2.1
+
+# linux-aarch64 & linux-ppc64le built on linux-64
+# osx-arm64 built on osx-64
+bazel_arch:
+  - linux-x86_64   # [linux]
+  - darwin-x86_64  # [osx]
+
+bazel_sha:
+  - cbccf5c02d404b4d3fdcc347e8cf1fc9a40e232905a1a8745499a82bdfaf00af  # [linux]
+  - df204b5fdd93571eeb9aea48b8d2328ae39ed0f27f137c5c0d9281d6145d2f21  # [osx]
+
+# ease transition period by building for both
+libprotobuf:
+  - "3.20"
+  - "3.21"
