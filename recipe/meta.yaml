@@ -8,7 +8,7 @@ source:
   - url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
     sha256: 88b12b2b4e0beb849eddde98d5373f2f932513229dbf9ec86cc8e4912fc75e79
     patches:
-      - 0001-Build-against-system-libprotobuf.patch
+      - patches/0001-Build-against-system-libprotobuf.patch
   - url: https://github.com/bazelbuild/bazel/releases/download/{{ bazel_version }}/bazel_nojdk-{{ bazel_version }}-{{ bazel_arch }}
     sha256: {{ bazel_sha }}
     fn: bazel
