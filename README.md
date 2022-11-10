@@ -27,73 +27,38 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_libprotobuf3.15</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_libprotobuf3.15" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_libprotobuf3.16</td>
+              <td>linux_aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_libprotobuf3.16" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_libprotobuf3.15</td>
+              <td>linux_ppc64le</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_aarch64_libprotobuf3.15" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_libprotobuf3.16</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_aarch64_libprotobuf3.16" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_libprotobuf3.15</td>
+              <td>osx_arm64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_ppc64le_libprotobuf3.15" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_libprotobuf3.16</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_ppc64le_libprotobuf3.16" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_libprotobuf3.15</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_libprotobuf3.15" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_libprotobuf3.16</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_libprotobuf3.16" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_libprotobuf3.15</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_arm64_libprotobuf3.15" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_libprotobuf3.16</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_arm64_libprotobuf3.16" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr>
