@@ -11,14 +11,14 @@ jobs:
       osx_64_libprotobuf3.15:
         CONFIG: osx_64_libprotobuf3.15
         UPLOAD_PACKAGES: 'True'
-      osx_64_libprotobuf3.21:
-        CONFIG: osx_64_libprotobuf3.21
+      osx_64_libprotobuf3.16:
+        CONFIG: osx_64_libprotobuf3.16
         UPLOAD_PACKAGES: 'True'
       osx_arm64_libprotobuf3.15:
         CONFIG: osx_arm64_libprotobuf3.15
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_libprotobuf3.21:
-        CONFIG: osx_arm64_libprotobuf3.21
+      osx_arm64_libprotobuf3.16:
+        CONFIG: osx_arm64_libprotobuf3.16
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
