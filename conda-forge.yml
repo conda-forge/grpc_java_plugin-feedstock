@@ -5,3 +5,5 @@ bot:
   automerge: true
 os_version:
   linux_64: cos7
+conda_build:
+  pkg_format: '2'
