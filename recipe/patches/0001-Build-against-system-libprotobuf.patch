@@ -1,4 +1,4 @@
-From cd0f87ff659a1dedd7b3a5469674b1de5ebaba8a Mon Sep 17 00:00:00 2001
+From 6dc477e3407b75b205ce80458cd8794a598b2896 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
@@ -10,8 +10,8 @@ Subject: [PATCH] Build against system libprotobuf
  protobuf.WORKSPACE   |  37 ++++
  protobuf.bzl         | 436 +++++++++++++++++++++++++++++++++++++++++++
  protobuf_deps.bzl    |  76 ++++++++
- repositories.bzl     |  12 +-
- 7 files changed, 681 insertions(+), 7 deletions(-)
+ repositories.bzl     |   8 +-
+ 7 files changed, 679 insertions(+), 5 deletions(-)
  create mode 100644 protobuf.BUILD
  create mode 100644 protobuf.WORKSPACE
  create mode 100644 protobuf.bzl
@@ -741,28 +741,25 @@ index 000000000..155a02e1b
 +            urls = ["https://github.com/bazelbuild/rules_python/archive/4b84ad270387a7c439ebdccfd530e2339601ef27.tar.gz"],
 +        )
 diff --git a/repositories.bzl b/repositories.bzl
-index 5860e1fee..d3dfe4a47 100644
+index cced1d29b..972b3972c 100644
 --- a/repositories.bzl
 +++ b/repositories.bzl
-@@ -148,12 +148,12 @@ def com_google_protobuf():
+@@ -148,11 +148,11 @@ def com_google_protobuf():
      # proto_library rules implicitly depend on @com_google_protobuf//:protoc,
      # which is the proto-compiler.
      # This statement defines the @com_google_protobuf repo.
 -    http_archive(
--        name = "com_google_protobuf",
--        sha256 = "2d9084d3dd13b86ca2e811d2331f780eb86f6d7cb02b405426e3c80dcbfabf25",
--        strip_prefix = "protobuf-3.21.1",
--        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.21.1.zip"],
--    )
 +    native.new_local_repository(
-+	name = "com_google_protobuf",
-+	path = ".",
-+	build_file = "./protobuf.BUILD",
-+	workspace_file = "./protobuf.WORKSPACE"
-+     )
+         name = "com_google_protobuf",
+-        sha256 = "c72840a5081484c4ac20789ea5bb5d5de6bc7c477ad76e7109fda2bc4e630fe6",
+-        strip_prefix = "protobuf-3.21.7",
+-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.21.7.zip"],
++        path = ".",
++        build_file = "./protobuf.BUILD",
++        workspace_file = "./protobuf.WORKSPACE"
+     )
  
  def com_google_protobuf_javalite():
-     # java_lite_proto_library rules implicitly depend on @com_google_protobuf_javalite
 -- 
-2.37.0.windows.1
+2.38.1.windows.1
 
