@@ -26,6 +26,7 @@ requirements:
     - libprotobuf
     - sed  # [osx]
   host:
+    - libabseil  # [libprotobuf != "3.21"]
     - libprotobuf
 
 test:
