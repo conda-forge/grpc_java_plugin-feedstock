@@ -1,11 +1,11 @@
-About grpc_java_plugin
-======================
+About grpc_java_plugin-feedstock
+================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/grpc_java_plugin-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/grpc/grpc-java/tree/master/compiler
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/grpc_java_plugin-feedstock/blob/main/LICENSE.txt)
 
 Summary: gRPC Java Codegen Plugin for Protobuf Compiler
 
