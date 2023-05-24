@@ -9,6 +9,7 @@ source:
     sha256: be779db38a72a0c693706c433133189538b04979eba1b728eaa21f4fd0f967d8
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
+      - patches/0002-use-C-17.patch
   - url: https://github.com/bazelbuild/bazel/releases/download/{{ bazel_version }}/bazel_nojdk-{{ bazel_version }}-{{ bazel_arch }}
     sha256: {{ bazel_sha }}
     fn: bazel

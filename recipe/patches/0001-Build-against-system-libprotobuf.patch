@@ -1,7 +1,7 @@
 From 558ed74656afbcb6c8664152f0355e894dd0cf98 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
-Subject: [PATCH] Build against system libprotobuf
+Subject: [PATCH 1/2] Build against system libprotobuf
 
 ---
  WORKSPACE            |   4 +-
