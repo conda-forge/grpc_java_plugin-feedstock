@@ -1,4 +1,4 @@
-From 6dc477e3407b75b205ce80458cd8794a598b2896 Mon Sep 17 00:00:00 2001
+From 558ed74656afbcb6c8664152f0355e894dd0cf98 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
@@ -741,7 +741,7 @@ index 000000000..155a02e1b
 +            urls = ["https://github.com/bazelbuild/rules_python/archive/4b84ad270387a7c439ebdccfd530e2339601ef27.tar.gz"],
 +        )
 diff --git a/repositories.bzl b/repositories.bzl
-index cced1d29b..972b3972c 100644
+index 2e3b2b62c..54a6ca35d 100644
 --- a/repositories.bzl
 +++ b/repositories.bzl
 @@ -148,11 +148,11 @@ def com_google_protobuf():
@@ -751,15 +751,12 @@ index cced1d29b..972b3972c 100644
 -    http_archive(
 +    native.new_local_repository(
          name = "com_google_protobuf",
--        sha256 = "c72840a5081484c4ac20789ea5bb5d5de6bc7c477ad76e7109fda2bc4e630fe6",
--        strip_prefix = "protobuf-3.21.7",
--        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.21.7.zip"],
+-        sha256 = "5d0f05587aa3ad56079b4c4481dcb462267e5f1075d905c321f8ed6339e74ab0",
+-        strip_prefix = "protobuf-22.3",
+-        urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v22.3/protobuf-22.3.zip"],
 +        path = ".",
 +        build_file = "./protobuf.BUILD",
 +        workspace_file = "./protobuf.WORKSPACE"
      )
  
  def com_google_protobuf_javalite():
--- 
-2.38.1.windows.1
-
