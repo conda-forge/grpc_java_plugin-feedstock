@@ -9,4 +9,4 @@ bazel_arch:
 
 bazel_sha:
   - cbccf5c02d404b4d3fdcc347e8cf1fc9a40e232905a1a8745499a82bdfaf00af  # [linux]
-  - df204b5fdd93571eeb9aea48b8d2328ae39ed0f27f137c5c0d9281d6145d2f21  # [osx]
+  - a4ae42a2e5f1b053b812d3b170670f0d3324193ef756535d206f97a6cdcc0e0c  # [osx]
