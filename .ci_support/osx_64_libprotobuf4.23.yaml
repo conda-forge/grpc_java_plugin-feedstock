@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 bazel_arch:
 - darwin-x86_64
 bazel_sha:
-- a4ae42a2e5f1b053b812d3b170670f0d3324193ef756535d206f97a6cdcc0e0c
+- df204b5fdd93571eeb9aea48b8d2328ae39ed0f27f137c5c0d9281d6145d2f21
 bazel_version:
 - 4.2.1
 c_compiler:
