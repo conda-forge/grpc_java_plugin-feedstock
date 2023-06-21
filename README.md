@@ -1,11 +1,11 @@
-About grpc_java_plugin
-======================
+About grpc_java_plugin-feedstock
+================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/grpc_java_plugin-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/grpc/grpc-java/tree/master/compiler
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/grpc_java_plugin-feedstock/blob/master/LICENSE.txt)
 
 Summary: gRPC Java Codegen Plugin for Protobuf Compiler
 
@@ -20,45 +20,80 @@ Current build status
     <td>
       <details>
         <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master">
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main">
           </a>
         </summary>
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_libprotobuf3.21</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libprotobuf3.21" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>linux_64_libprotobuf4.23.2</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libprotobuf4.23.2" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le</td>
+              <td>linux_aarch64_libprotobuf3.21</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libprotobuf3.21" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_aarch64_libprotobuf4.23.2</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_libprotobuf4.23.2" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64</td>
+              <td>linux_ppc64le_libprotobuf3.21</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libprotobuf3.21" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_libprotobuf4.23.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_libprotobuf4.23.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libprotobuf3.21</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libprotobuf3.21" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libprotobuf4.23.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libprotobuf4.23.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libprotobuf3.21</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libprotobuf3.21" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_libprotobuf4.23.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/grpc_java_plugin-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_libprotobuf4.23.2" alt="variant">
                 </a>
               </td>
             </tr>
