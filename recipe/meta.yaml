@@ -30,7 +30,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - openjdk
+    - openjdk 17
     - bazel-toolchain
     - libprotobuf
     - sed  # [osx]
