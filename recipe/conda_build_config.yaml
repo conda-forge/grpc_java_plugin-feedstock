@@ -1,6 +1,11 @@
 bazel_version:
   - 4.2.1
 
+MACOSX_SDK_VERSION:            # [osx and x86_64]
+  - "10.13"                    # [osx and x86_64]
+MACOSX_DEPLOYMENT_TARGET:      # [osx and x86_64]
+  - "10.13"                    # [osx and x86_64]
+
 # linux-aarch64 & linux-ppc64le built on linux-64
 # osx-arm64 built on osx-64
 bazel_arch:
