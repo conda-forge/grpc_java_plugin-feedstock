@@ -1,16 +1,19 @@
-From a473d0ec4da855d73b9a5e7c782eefa7ee8a6cb6 Mon Sep 17 00:00:00 2001
+From 3346ad3fd8114fdb690d758fefec5305b1916c0b Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Wed, 24 May 2023 22:06:05 +1100
-Subject: [PATCH 2/2] use C++17
+Subject: [PATCH 2/3] use C++17
 
 ---
  .bazelrc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/.bazelrc b/.bazelrc
-index 554440cfe..53485cb97 100644
+index 554440c..53485cb 100644
 --- a/.bazelrc
 +++ b/.bazelrc
 @@ -1 +1 @@
 -build --cxxopt=-std=c++14 --host_cxxopt=-std=c++14
 +build --cxxopt=-std=c++17 --host_cxxopt=-std=c++17
+-- 
+2.39.2 (Apple Git-143)
+

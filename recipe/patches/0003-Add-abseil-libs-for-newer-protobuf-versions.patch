@@ -1,0 +1,39 @@
+From c1860d91a7959d6d676bcf6e9f529edd016ae278 Mon Sep 17 00:00:00 2001
+From: "Uwe L. Korn" <uwe.korn@quantco.com>
+Date: Tue, 13 Jun 2023 16:52:25 +0200
+Subject: [PATCH 3/3] Add abseil libs for newer protobuf versions
+
+---
+ protobuf.BUILD | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/protobuf.BUILD b/protobuf.BUILD
+index 8531d28..c2297bd 100644
+--- a/protobuf.BUILD
++++ b/protobuf.BUILD
+@@ -62,19 +62,19 @@ genrule(
+ 
+ cc_library(
+     name = "protobuf",
+-    linkopts = ["-lprotobuf"],
++    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal"],
+     visibility = ["//visibility:public"],
+ )
+ 
+ cc_library(
+     name = "protobuf_headers",
+-    linkopts = ["-lprotobuf"],
++    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal"],
+     visibility = ["//visibility:public"],
+ )
+ 
+ cc_library(
+     name = "protoc_lib",
+-    linkopts = ["-lprotoc"],
++    linkopts = ["-lprotoc", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal"],
+     visibility = ["//visibility:public"],
+ )
+ 
+-- 
+2.39.2 (Apple Git-143)
+
