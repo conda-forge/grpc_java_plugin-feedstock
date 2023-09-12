@@ -1,7 +1,7 @@
-From 558ed74656afbcb6c8664152f0355e894dd0cf98 Mon Sep 17 00:00:00 2001
+From 5d8ce440ae09881dde145268ed97fa92d6d06630 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
-Subject: [PATCH 1/2] Build against system libprotobuf
+Subject: [PATCH 1/3] Build against system libprotobuf
 
 ---
  WORKSPACE            |   4 +-
@@ -18,7 +18,7 @@ Subject: [PATCH 1/2] Build against system libprotobuf
  create mode 100644 protobuf_deps.bzl
 
 diff --git a/WORKSPACE b/WORKSPACE
-index 4727a9621..8fd4921fa 100644
+index 4727a96..8fd4921 100644
 --- a/WORKSPACE
 +++ b/WORKSPACE
 @@ -16,8 +16,10 @@ load("//:repositories.bzl", "grpc_java_repositories")
@@ -34,7 +34,7 @@ index 4727a9621..8fd4921fa 100644
  protobuf_deps()
  
 diff --git a/compiler/BUILD.bazel b/compiler/BUILD.bazel
-index f88075c0e..3aa9f1030 100644
+index f88075c..3aa9f10 100644
 --- a/compiler/BUILD.bazel
 +++ b/compiler/BUILD.bazel
 @@ -12,6 +12,7 @@ cc_binary(
@@ -47,7 +47,7 @@ index f88075c0e..3aa9f1030 100644
  
 diff --git a/protobuf.BUILD b/protobuf.BUILD
 new file mode 100644
-index 000000000..8531d28f0
+index 0000000..8531d28
 --- /dev/null
 +++ b/protobuf.BUILD
 @@ -0,0 +1,122 @@
@@ -175,7 +175,7 @@ index 000000000..8531d28f0
 +) for proto in WELL_KNOWN_PROTO_MAP.items()]
 diff --git a/protobuf.WORKSPACE b/protobuf.WORKSPACE
 new file mode 100644
-index 000000000..81aa3e9d2
+index 0000000..81aa3e9
 --- /dev/null
 +++ b/protobuf.WORKSPACE
 @@ -0,0 +1,37 @@
@@ -218,7 +218,7 @@ index 000000000..81aa3e9d2
 +
 diff --git a/protobuf.bzl b/protobuf.bzl
 new file mode 100644
-index 000000000..8b3a16e7c
+index 0000000..8b3a16e
 --- /dev/null
 +++ b/protobuf.bzl
 @@ -0,0 +1,436 @@
@@ -660,7 +660,7 @@ index 000000000..8b3a16e7c
 +        fail("Bazel must be newer than 0.5.4")
 diff --git a/protobuf_deps.bzl b/protobuf_deps.bzl
 new file mode 100644
-index 000000000..155a02e1b
+index 0000000..155a02e
 --- /dev/null
 +++ b/protobuf_deps.bzl
 @@ -0,0 +1,76 @@
@@ -741,7 +741,7 @@ index 000000000..155a02e1b
 +            urls = ["https://github.com/bazelbuild/rules_python/archive/4b84ad270387a7c439ebdccfd530e2339601ef27.tar.gz"],
 +        )
 diff --git a/repositories.bzl b/repositories.bzl
-index 2e3b2b62c..54a6ca35d 100644
+index 2e3b2b6..54a6ca3 100644
 --- a/repositories.bzl
 +++ b/repositories.bzl
 @@ -148,11 +148,11 @@ def com_google_protobuf():
@@ -760,3 +760,6 @@ index 2e3b2b62c..54a6ca35d 100644
      )
  
  def com_google_protobuf_javalite():
+-- 
+2.39.2 (Apple Git-143)
+

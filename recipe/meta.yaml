@@ -10,7 +10,7 @@ source:
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
       - patches/0002-use-C-17.patch
-      - patches/0001-Add-abseil-libs-for-newer-protobuf-versions.patch  # [libprotobuf != "3.21"]
+      - patches/0003-Add-abseil-libs-for-newer-protobuf-versions.patch
   - url: https://github.com/bazelbuild/bazel/releases/download/{{ bazel_version }}/bazel_nojdk-{{ bazel_version }}-{{ bazel_arch }}
     sha256: {{ bazel_sha }}
     fn: bazel
