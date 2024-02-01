@@ -1,4 +1,4 @@
-From c1860d91a7959d6d676bcf6e9f529edd016ae278 Mon Sep 17 00:00:00 2001
+From 7f161fd30b4f38c78c89e12c7ff5ca14d35010c7 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwe.korn@quantco.com>
 Date: Tue, 13 Jun 2023 16:52:25 +0200
 Subject: [PATCH 3/3] Add abseil libs for newer protobuf versions
@@ -8,7 +8,7 @@ Subject: [PATCH 3/3] Add abseil libs for newer protobuf versions
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/protobuf.BUILD b/protobuf.BUILD
-index 8531d28..c2297bd 100644
+index 8531d28..2b579b2 100644
 --- a/protobuf.BUILD
 +++ b/protobuf.BUILD
 @@ -62,19 +62,19 @@ genrule(
@@ -16,24 +16,21 @@ index 8531d28..c2297bd 100644
  cc_library(
      name = "protobuf",
 -    linkopts = ["-lprotobuf"],
-+    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal"],
++    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal", "-labsl_log_internal_message", "-labsl_log_internal_check_op"],
      visibility = ["//visibility:public"],
  )
  
  cc_library(
      name = "protobuf_headers",
 -    linkopts = ["-lprotobuf"],
-+    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal"],
++    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal", "-labsl_log_internal_message", "-labsl_log_internal_check_op"],
      visibility = ["//visibility:public"],
  )
  
  cc_library(
      name = "protoc_lib",
 -    linkopts = ["-lprotoc"],
-+    linkopts = ["-lprotoc", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal"],
++    linkopts = ["-lprotoc", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal", "-labsl_log_internal_message", "-labsl_log_internal_check_op"],
      visibility = ["//visibility:public"],
  )
  
--- 
-2.39.2 (Apple Git-143)
-
