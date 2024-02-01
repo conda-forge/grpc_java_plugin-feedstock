@@ -1,4 +1,4 @@
-From 3346ad3fd8114fdb690d758fefec5305b1916c0b Mon Sep 17 00:00:00 2001
+From e57dad7c5b6c5bc4fa9297cc95fb0ac86ee40b4f Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Wed, 24 May 2023 22:06:05 +1100
 Subject: [PATCH 2/3] use C++17
@@ -14,6 +14,3 @@ index 554440c..53485cb 100644
 @@ -1 +1 @@
 -build --cxxopt=-std=c++14 --host_cxxopt=-std=c++14
 +build --cxxopt=-std=c++17 --host_cxxopt=-std=c++17
--- 
-2.39.2 (Apple Git-143)
-
