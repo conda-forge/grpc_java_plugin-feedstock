@@ -16,11 +16,12 @@ source:
     fn: bazel
 
 build:
-  number: 7
+  number: 8
   skip: true  # [win]
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - openjdk
@@ -29,7 +30,7 @@ requirements:
     - libprotobuf
     - sed  # [osx]
   host:
-    - libabseil  # [libprotobuf != "3.21"]
+    - libabseil
     - libprotobuf
 
 test:
