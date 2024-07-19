@@ -27,7 +27,7 @@ docker_image:
 libabseil:
 - '20240116'
 libprotobuf:
-- 5.26.1
+- 5.27.2
 target_platform:
 - linux-64
 zip_keys:
