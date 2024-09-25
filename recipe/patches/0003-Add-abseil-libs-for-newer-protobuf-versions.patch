@@ -1,4 +1,4 @@
-From 7f161fd30b4f38c78c89e12c7ff5ca14d35010c7 Mon Sep 17 00:00:00 2001
+From 84695b6067c3fc6a681c4edeec890da7740745be Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwe.korn@quantco.com>
 Date: Tue, 13 Jun 2023 16:52:25 +0200
 Subject: [PATCH 3/3] Add abseil libs for newer protobuf versions
@@ -8,7 +8,7 @@ Subject: [PATCH 3/3] Add abseil libs for newer protobuf versions
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/protobuf.BUILD b/protobuf.BUILD
-index 8531d28..2b579b2 100644
+index 8531d28f0..2b579b2b5 100644
 --- a/protobuf.BUILD
 +++ b/protobuf.BUILD
 @@ -62,19 +62,19 @@ genrule(
