@@ -190,7 +190,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-forge/bazel](https://github.com/conda-forge/bazel/)
-* [@conda-forge/grpc-cpp](https://github.com/conda-forge/grpc-cpp/)
+* [@conda-forge/bazel](https://github.com/orgs/conda-forge/teams/bazel/)
+* [@conda-forge/grpc-cpp](https://github.com/orgs/conda-forge/teams/grpc-cpp/)
 * [@xhochy](https://github.com/xhochy/)
 

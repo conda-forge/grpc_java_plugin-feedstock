@@ -5,13 +5,13 @@ MACOSX_SDK_VERSION:
 bazel_arch:
 - darwin-x86_64
 bazel_sha:
-- df204b5fdd93571eeb9aea48b8d2328ae39ed0f27f137c5c0d9281d6145d2f21
+- ccc67fa48a6444818a5b85e8174c89ca2630df60c1e2327714d944035a240fc9
 bazel_version:
-- 4.2.1
+- 6.5.0
 c_compiler:
 - clang
 c_compiler_version:
-- '16'
+- '17'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -23,11 +23,11 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '16'
+- '17'
 libabseil:
-- '20240116'
+- '20240722'
 libprotobuf:
-- 5.26.1
+- 5.27.5
 macos_machine:
 - arm64-apple-darwin20.0.0
 target_platform:

@@ -1,13 +1,13 @@
 bazel_arch:
 - linux-x86_64
 bazel_sha:
-- cbccf5c02d404b4d3fdcc347e8cf1fc9a40e232905a1a8745499a82bdfaf00af
+- 218ce0aed544d29084f4d9ff98f01bc784b90fe4c79dab63fa990dc68e66eaa9
 bazel_version:
-- 4.2.1
+- 6.5.0
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '13'
 c_stdlib:
 - sysroot
 c_stdlib_version:
@@ -21,13 +21,13 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 libabseil:
-- '20240116'
+- '20240722'
 libprotobuf:
-- 5.26.1
+- 5.27.5
 target_platform:
 - linux-ppc64le
 zip_keys:
