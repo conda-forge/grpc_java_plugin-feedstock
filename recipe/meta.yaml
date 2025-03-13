@@ -16,7 +16,7 @@ source:
     fn: bazel
 
 build:
-  number: 12
+  number: 13
   skip: true  # [win]
 
 requirements:
