@@ -1,4 +1,4 @@
-{% set version = "1.55.1" %}
+{% set version = "1.73.0" %}
 
 {% set bz_version = "7.6.1" %}
 {% set bz_base_url = "https://github.com/bazelbuild/bazel/releases/download" %}
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: be779db38a72a0c693706c433133189538b04979eba1b728eaa21f4fd0f967d8
+    sha256: eca44a9f3eb341daf7a01482b96016dfa7d91baee495a697746c4724868a06db
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
       - patches/0002-use-C-17.patch
@@ -22,7 +22,7 @@ source:
     sha256: bdda8480e65f4a4cf3c243c09e10bbebf924ba6d0824a632c4e3081d1aa8b9f8            # [build_platform == "osx-64"]
 
 build:
-  number: 14
+  number: 0
   skip: true  # [win]
 
 requirements:
