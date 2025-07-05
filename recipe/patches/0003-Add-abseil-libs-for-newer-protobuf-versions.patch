@@ -1,7 +1,7 @@
-From 21eb33bdcfc636797782f87241ef737a16dbd029 Mon Sep 17 00:00:00 2001
+From 939572f6fe4fc4b11b91ef30f40c4ef3dd369733 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwe.korn@quantco.com>
 Date: Tue, 13 Jun 2023 16:52:25 +0200
-Subject: [PATCH 3/3] Add abseil libs for newer protobuf versions
+Subject: [PATCH 3/4] Add abseil libs for newer protobuf versions
 
 ---
  protobuf.BUILD | 6 +++---
