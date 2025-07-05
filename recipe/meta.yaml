@@ -1,5 +1,8 @@
 {% set version = "1.55.1" %}
 
+{% set bz_version = "4.2.1" %}
+{% set bz_base_url = "https://github.com/bazelbuild/bazel/releases/download" %}
+
 package:
   name: grpc_java_plugin
   version: {{ version }}
@@ -11,9 +14,12 @@ source:
       - patches/0001-Build-against-system-libprotobuf.patch
       - patches/0002-use-C-17.patch
       - patches/0003-Add-abseil-libs-for-newer-protobuf-versions.patch
-  - url: https://github.com/bazelbuild/bazel/releases/download/{{ bazel_version }}/bazel_nojdk-{{ bazel_version }}-{{ bazel_arch }}
-    sha256: {{ bazel_sha }}
-    fn: bazel
+
+  - fn: bazel
+    url: {{ bz_base_url }}/{{ bz_version }}/bazel_nojdk-{{ bz_version }}-linux-x86_64   # [build_platform == "linux-64"]
+    sha256: cbccf5c02d404b4d3fdcc347e8cf1fc9a40e232905a1a8745499a82bdfaf00af            # [build_platform == "linux-64"]
+    url: {{ bz_base_url }}/{{ bz_version }}/bazel_nojdk-{{ bz_version }}-darwin-x86_64  # [build_platform == "osx-64"]
+    sha256: df204b5fdd93571eeb9aea48b8d2328ae39ed0f27f137c5c0d9281d6145d2f21            # [build_platform == "osx-64"]
 
 build:
   number: 14
