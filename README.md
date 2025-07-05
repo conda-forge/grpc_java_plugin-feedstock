@@ -74,7 +74,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-grpc_java_plugin-green.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/grpc_java_plugin.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/grpc_java_plugin.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/grpc_java_plugin.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-grpc__java__plugin-green.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/grpc_java_plugin.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/grpc_java_plugin.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/grpc_java_plugin.svg)](https://anaconda.org/conda-forge/grpc_java_plugin) |
 
 Installing grpc_java_plugin
 ===========================
