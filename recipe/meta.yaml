@@ -1,4 +1,4 @@
-{% set version = "1.67.1" %}
+{% set version = "1.68.3" %}
 
 # bazel 7+ requires setting up a toolchain so that the macOS SDK in a non-standard
 # location is accepted, which would require bazel-toolchain etc.
@@ -11,7 +11,7 @@ package:
 
 source:
   - url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 74d3ce12a0e78ab230581af703efb78522f677cfb1f50dd9e7b70d46a818f5ff
+    sha256: 8a30973b5da889f5f24e8532f630831dc3a24dd722e2898ca54cf4b6291ac794
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
       - patches/0002-use-C-17.patch
