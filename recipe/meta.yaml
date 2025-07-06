@@ -1,4 +1,4 @@
-{% set version = "1.70.0" %}
+{% set version = "1.71.0" %}
 
 # bazel 7+ requires setting up a toolchain so that the macOS SDK in a non-standard
 # location is accepted, which would require bazel-toolchain etc.
@@ -11,14 +11,11 @@ package:
 
 source:
   - url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 14e31cc6605afc3f1d8bd04767ec741f49eada314a167dd45886206c31341e33
+    sha256: 2942a56b794479a0bc1c0e69039c9ae615f1cb39d0e3af12af35c0eb3bd73fdf
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
       - patches/0002-use-C-17.patch
       - patches/0003-Add-abseil-libs-for-newer-protobuf-versions.patch
-      # backport https://github.com/grpc/grpc-java/commit/f299ef5e5832898fa29ede31dee1a6085b90c051
-      # from compatibility with absl::string_view being equal to std::string_view
-      - patches/0004-compiler-Prepare-for-C-protobuf-using-string_view.patch
 
   - fn: bazel
     url: {{ bz_base_url }}/{{ bz_version }}/bazel_nojdk-{{ bz_version }}-linux-x86_64   # [build_platform == "linux-64"]
