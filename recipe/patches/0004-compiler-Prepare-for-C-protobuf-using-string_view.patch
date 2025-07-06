@@ -1,4 +1,4 @@
-From df0b4c114282c90ed76ae7ede36036a31a284ed4 Mon Sep 17 00:00:00 2001
+From 7e9615511e99f336747de35daa6cce9531ef658c Mon Sep 17 00:00:00 2001
 From: Eric Anderson <ejona@google.com>
 Date: Wed, 15 Jan 2025 14:51:45 -0800
 Subject: [PATCH 4/4] compiler: Prepare for C++ protobuf using string_view
@@ -13,7 +13,7 @@ cl/711732759 b/353571051
  1 file changed, 17 insertions(+), 16 deletions(-)
 
 diff --git a/compiler/src/java_plugin/cpp/java_generator.cpp b/compiler/src/java_plugin/cpp/java_generator.cpp
-index 51e86d9ce..06297d576 100644
+index cf8445035..baa7aff4a 100644
 --- a/compiler/src/java_plugin/cpp/java_generator.cpp
 +++ b/compiler/src/java_plugin/cpp/java_generator.cpp
 @@ -147,7 +147,7 @@ static std::set<std::string> java_keywords = {
