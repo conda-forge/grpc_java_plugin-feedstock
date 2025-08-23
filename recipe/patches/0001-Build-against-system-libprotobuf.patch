@@ -1,4 +1,4 @@
-From 01810a6dcc8a4b96e126f68aa17392df828d02d3 Mon Sep 17 00:00:00 2001
+From 3e796c51b0b49c0bdaf682778c34bc1ece552f4b Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH 1/3] Build against system libprotobuf
@@ -18,12 +18,12 @@ Subject: [PATCH 1/3] Build against system libprotobuf
  create mode 100644 protobuf_deps.bzl
 
 diff --git a/WORKSPACE b/WORKSPACE
-index 7bbfbcc5f..02f1aead1 100644
+index 227ef3327..a82ee21d5 100644
 --- a/WORKSPACE
 +++ b/WORKSPACE
-@@ -22,8 +22,10 @@ load("//:repositories.bzl", "grpc_java_repositories")
+@@ -26,8 +26,10 @@ load("@bazel_jar_jar//:jar_jar.bzl", "jar_jar_repositories")
  
- grpc_java_repositories()
+ jar_jar_repositories()
  
 -load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
  load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
@@ -34,7 +34,7 @@ index 7bbfbcc5f..02f1aead1 100644
  protobuf_deps()
  
 diff --git a/compiler/BUILD.bazel b/compiler/BUILD.bazel
-index 753f48507..c9a999251 100644
+index 6d885ef3f..637dcf65d 100644
 --- a/compiler/BUILD.bazel
 +++ b/compiler/BUILD.bazel
 @@ -13,6 +13,7 @@ cc_binary(
@@ -741,22 +741,25 @@ index 000000000..155a02e1b
 +            urls = ["https://github.com/bazelbuild/rules_python/archive/4b84ad270387a7c439ebdccfd530e2339601ef27.tar.gz"],
 +        )
 diff --git a/repositories.bzl b/repositories.bzl
-index a4f5b0de1..c8df50411 100644
+index 47609ae76..ce6c4379d 100644
 --- a/repositories.bzl
 +++ b/repositories.bzl
-@@ -152,11 +152,11 @@ def com_google_protobuf():
+@@ -114,11 +114,11 @@ def com_google_protobuf():
      # proto_library rules implicitly depend on @com_google_protobuf//:protoc,
      # which is the proto-compiler.
      # This statement defines the @com_google_protobuf repo.
 -    http_archive(
 +    native.new_local_repository(
          name = "com_google_protobuf",
--        sha256 = "9bd87b8280ef720d3240514f884e56a712f2218f0d693b48050c836028940a42",
--        strip_prefix = "protobuf-25.1",
--        urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v25.1/protobuf-25.1.tar.gz"],
+-        sha256 = "3cf7d5b17c4ff04fe9f038104e9d0cae6da09b8ce271c13e44f8ac69f51e4e0f",
+-        strip_prefix = "protobuf-25.5",
+-        urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v25.5/protobuf-25.5.tar.gz"],
 +        path = ".",
 +        build_file = "./protobuf.BUILD",
 +        workspace_file = "./protobuf.WORKSPACE"
      )
  
  def io_grpc_grpc_proto():
+-- 
+2.50.0
+
