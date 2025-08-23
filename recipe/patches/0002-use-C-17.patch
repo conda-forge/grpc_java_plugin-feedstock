@@ -1,4 +1,4 @@
-From 5e08916e24388850779da0174833d6d0043b3d5d Mon Sep 17 00:00:00 2001
+From 32983d8ff716129f283509ff3cf9bee226a00b7c Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Wed, 24 May 2023 22:06:05 +1100
 Subject: [PATCH 2/3] use C++17
@@ -14,3 +14,6 @@ index 554440cfe..53485cb97 100644
 @@ -1 +1 @@
 -build --cxxopt=-std=c++14 --host_cxxopt=-std=c++14
 +build --cxxopt=-std=c++17 --host_cxxopt=-std=c++17
+-- 
+2.50.0
+

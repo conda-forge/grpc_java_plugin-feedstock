@@ -1,4 +1,4 @@
-From 944e8a8b643f5c47b871a9ee06f743c170a67b12 Mon Sep 17 00:00:00 2001
+From dbd62518fbba26c0cc9f046b396a12b7f0aacb71 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwe.korn@quantco.com>
 Date: Tue, 13 Jun 2023 16:52:25 +0200
 Subject: [PATCH 3/3] Add abseil libs for newer protobuf versions
@@ -34,3 +34,6 @@ index 8531d28f0..2b579b2b5 100644
      visibility = ["//visibility:public"],
  )
  
+-- 
+2.50.0
+
