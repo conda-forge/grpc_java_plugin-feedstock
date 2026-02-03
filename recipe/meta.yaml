@@ -14,8 +14,7 @@ source:
     sha256: ca53210ee823a15d9b1ebe86a36b564d6834fd0c049e207469803180b7f8a20e
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
-      - patches/0002-use-C-17.patch
-      - patches/0003-Add-abseil-libs-for-newer-protobuf-versions.patch
+      - patches/0002-Add-abseil-libs-for-newer-protobuf-versions.patch
 
   - fn: bazel
     url: {{ bz_base_url }}/{{ bz_version }}/bazel_nojdk-{{ bz_version }}-linux-x86_64  # [build_platform == "linux-64"]

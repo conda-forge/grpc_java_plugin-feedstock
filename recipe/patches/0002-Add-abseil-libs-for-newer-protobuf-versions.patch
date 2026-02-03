@@ -1,0 +1,36 @@
+From d3b08156219beb6f0230f4504601a115da0dee28 Mon Sep 17 00:00:00 2001
+From: "Uwe L. Korn" <uwe.korn@quantco.com>
+Date: Tue, 13 Jun 2023 16:52:25 +0200
+Subject: [PATCH 2/2] Add abseil libs for newer protobuf versions
+
+---
+ protobuf.BUILD | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/protobuf.BUILD b/protobuf.BUILD
+index 8531d28f0..2b579b2b5 100644
+--- a/protobuf.BUILD
++++ b/protobuf.BUILD
+@@ -62,19 +62,19 @@ genrule(
+ 
+ cc_library(
+     name = "protobuf",
+-    linkopts = ["-lprotobuf"],
++    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal", "-labsl_log_internal_message", "-labsl_log_internal_check_op"],
+     visibility = ["//visibility:public"],
+ )
+ 
+ cc_library(
+     name = "protobuf_headers",
+-    linkopts = ["-lprotobuf"],
++    linkopts = ["-lprotobuf", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal", "-labsl_log_internal_message", "-labsl_log_internal_check_op"],
+     visibility = ["//visibility:public"],
+ )
+ 
+ cc_library(
+     name = "protoc_lib",
+-    linkopts = ["-lprotoc"],
++    linkopts = ["-lprotoc", "-labsl_hash", "-labsl_raw_hash_set", "-labsl_raw_logging_internal", "-labsl_log_internal_message", "-labsl_log_internal_check_op"],
+     visibility = ["//visibility:public"],
+ )
+ 
