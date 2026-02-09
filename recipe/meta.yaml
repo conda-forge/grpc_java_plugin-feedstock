@@ -33,7 +33,7 @@ requirements:
     - {{ compiler('cxx') }}
     - openjdk
     - openjdk 21  # [linux]
-    - bazel-toolchain <0.5
+    - bazel-toolchain
     - libprotobuf
     - sed  # [osx]
   host:
