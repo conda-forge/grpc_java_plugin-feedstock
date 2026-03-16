@@ -1,14 +1,12 @@
-From 06ed92b4a46312cfe8db2d97c9fe34db5f5c801f Mon Sep 17 00:00:00 2001
+From 969c8bb92abb5a96d48af441aff146ae7cb5ae8f Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
 
 ---
  MODULE.bazel         | 8 +++++++-
- WORKSPACE            | 3 ++-
  compiler/BUILD.bazel | 1 +
- repositories.bzl     | 8 ++++----
- 4 files changed, 14 insertions(+), 6 deletions(-)
+ 2 files changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/MODULE.bazel b/MODULE.bazel
 index 8ee4b07..04f82a8 100644
@@ -33,20 +31,6 @@ index 8ee4b07..04f82a8 100644
  maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
  maven.install(
      artifacts = IO_GRPC_GRPC_JAVA_ARTIFACTS,
-diff --git a/WORKSPACE b/WORKSPACE
-index 1efdf27..1860890 100644
---- a/WORKSPACE
-+++ b/WORKSPACE
-@@ -13,7 +13,8 @@ http_archive(
-     ],
- )
- 
--load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS", "protobuf_deps")
-+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
-+load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
- 
- protobuf_deps()
- 
 diff --git a/compiler/BUILD.bazel b/compiler/BUILD.bazel
 index e8a0571..e640e8b 100644
 --- a/compiler/BUILD.bazel
@@ -59,23 +43,3 @@ index e8a0571..e640e8b 100644
      ],
  )
  
-diff --git a/repositories.bzl b/repositories.bzl
-index 33efeba..d5d1ee0 100644
---- a/repositories.bzl
-+++ b/repositories.bzl
-@@ -114,11 +114,11 @@ def com_google_protobuf():
-     # proto_library rules implicitly depend on @com_google_protobuf//:protoc,
-     # which is the proto-compiler.
-     # This statement defines the @com_google_protobuf repo.
--    http_archive(
-+    native.new_local_repository(
-         name = "com_google_protobuf",
--        sha256 = "fda132cb0c86400381c0af1fe98bd0f775cb566cb247cdcc105e344e00acc30e",
--        strip_prefix = "protobuf-33.1",
--        urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v33.1/protobuf-33.1.tar.gz"],
-+        path = "./third_party/protobuf",
-+        build_file = "./third_party/protobuf/BUILD",
-+        workspace_file = "./third_party/protobuf/WORKSPACE"
-     )
- 
- def io_grpc_grpc_proto():
