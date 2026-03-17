@@ -1,4 +1,4 @@
-{% set version = "1.79.0" %}
+{% set version = "1.80.0" %}
 {% set bz_version = "8.6.0" %}
 {% set bz_base_url = "https://github.com/bazelbuild/bazel/releases/download" %}
 
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/grpc/grpc-java/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: ca53210ee823a15d9b1ebe86a36b564d6834fd0c049e207469803180b7f8a20e
+    sha256: d202e1759913b3d789052e5d243a994a44d1a30b6fc0f4286802c859ffd8d866
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
 
