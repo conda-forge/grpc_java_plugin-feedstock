@@ -1,4 +1,4 @@
-From 969c8bb92abb5a96d48af441aff146ae7cb5ae8f Mon Sep 17 00:00:00 2001
+From 24bbebbcbeebb57a60eb67557281455302003f28 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
@@ -9,14 +9,14 @@ Subject: [PATCH] Build against system libprotobuf
  2 files changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/MODULE.bazel b/MODULE.bazel
-index 8ee4b07..04f82a8 100644
+index 6034132..5e35b5b 100644
 --- a/MODULE.bazel
 +++ b/MODULE.bazel
 @@ -50,11 +50,17 @@ bazel_dep(name = "bazel_jar_jar", version = "0.1.11.bcr.1")
  bazel_dep(name = "bazel_skylib", version = "1.7.1")
  bazel_dep(name = "googleapis", version = "0.0.0-20240326-1c8d509c5", repo_name = "com_google_googleapis")
  bazel_dep(name = "grpc-proto", version = "0.0.0-20240627-ec30f58.bcr.1", repo_name = "io_grpc_grpc_proto")
--bazel_dep(name = "protobuf", version = "33.1", repo_name = "com_google_protobuf")
+-bazel_dep(name = "protobuf", version = "33.4", repo_name = "com_google_protobuf")
 +bazel_dep(name = "platforms", version = "1.0.0")
 +bazel_dep(name = "protobuf", version = "PROTOC_VERSION", repo_name = "com_google_protobuf")
  bazel_dep(name = "rules_cc", version = "0.0.9")
