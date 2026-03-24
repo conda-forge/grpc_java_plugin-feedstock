@@ -8,8 +8,9 @@ mkdir -p third_party
 cp -ap $RECIPE_DIR/systemlibs third_party/systemlibs
 cp -ap $PREFIX/share/bazel/protobuf/bazel third_party/systemlibs/protobuf/
 
-export ABSEIL_VERSION=$(conda list -p $PREFIX libabseil --fields version | grep -v '#')
-export PROTOC_VERSION=$(conda list -p $PREFIX libprotobuf | grep -v '^#' | tr -s ' ' | cut -f 2 -d ' ' | sed -E 's/^[0-9]+\.([0-9]+\.[0-9]+)$/\1/')
+
+export ABSEIL_VERSION="$(conda list -p "${PREFIX}" libabseil --fields version | awk '!/^#/ && NF { print $1; exit }')"
+export PROTOC_VERSION="$(conda list -p "${PREFIX}" libprotobuf --fields version | awk '!/^#/ && NF { print $1; exit }' | sed -E 's/^[0-9]+\.([0-9]+\.[0-9]+)$/\1/')"
 sed -i "s:\${BUILD_PREFIX}:${BUILD_PREFIX}:" \
         third_party/systemlibs/protobuf/BUILD \
 	third_party/systemlibs/protobuf/src/google/protobuf/compiler/BUILD

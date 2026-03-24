@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  version: "1.80.0"
+  bz_version: "8.6.0"
+  bz_base_url: https://github.com/bazelbuild/bazel/releases/download
+
+package:
+  name: grpc_java_plugin
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/grpc/grpc-java/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: d202e1759913b3d789052e5d243a994a44d1a30b6fc0f4286802c859ffd8d866
+    patches:
+      - patches/0001-Build-against-system-libprotobuf.patch
+  - if: build_platform == "linux-64"
+    then:
+      url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-linux-x86_64
+      sha256: 02c355741012603b703e2a8d07ded1212f92ec6eacdabdd552695f8083e7a594
+      file_name: bazel
+  - if: build_platform == "osx-64"
+    then:
+      url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-darwin-x86_64
+      sha256: 6a6d0a42d62fc3a4a391d0b9976f750191ccb9afa7b084e78d0daa0422b202d0
+      file_name: bazel
+  - if: build_platform == "osx-arm64"
+    then:
+      url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-darwin-arm64
+      sha256: 61776a387f2ea2a515eb92bc1c520b6af6451148216244058f6ee2b4c012cd89
+      file_name: bazel
+
+build:
+  number: 1
+  skip: win
+
+requirements:
+  build:
+    - ${{ stdlib('c') }}
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - openjdk
+    - if: linux or linux
+      then: openjdk 21.*
+    - bazel-toolchain >=0.5.8
+    - libprotobuf
+    - if: osx
+      then: sed
+  host:
+    - libabseil
+    - libabseil-bazel-systemlib
+    - libprotobuf
+    - libprotobuf-bazel-systemlib
+    - protobuf-bazel-rules
+
+tests:
+  - script:
+      - test -f $PREFIX/bin/grpc_java_plugin
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: gRPC Java Codegen Plugin for Protobuf Compiler
+  homepage: https://github.com/grpc/grpc-java/tree/master/compiler
+
+extra:
+  recipe-maintainers:
+    - xhochy
+    - conda-forge/bazel
+    - conda-forge/grpc-cpp
