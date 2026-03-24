@@ -40,12 +40,11 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
     - openjdk
-    - if: linux or linux
+    - if: linux
       then: openjdk 21.*
     - bazel-toolchain >=0.5.8
     - libprotobuf
-    - if: osx
-      then: sed
+    - sed
   host:
     - libabseil
     - libabseil-bazel-systemlib
