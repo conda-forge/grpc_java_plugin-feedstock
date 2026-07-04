@@ -4,6 +4,13 @@ context:
   version: "1.85.1"
   bz_version: "8.6.0"
   bz_base_url: https://github.com/bazelbuild/bazel/releases/download
+  bz_os: ${{ "linux" if linux else "darwin" }}
+  bz_arch: ${{ "x86_64" if x86_64 else "arm64" }}
+  bz_hash: ${{ "02c355741012603b703e2a8d07ded1212f92ec6eacdabdd552695f8083e7a594" if build_platform == "linux-64" else
+               "19b9c2f6dbb87d9d9c64a951e01b9e62abe8b8ea07550206609c62b7f0f12ae9" if build_platform == "linux-aarch64" else
+               "6a6d0a42d62fc3a4a391d0b9976f750191ccb9afa7b084e78d0daa0422b202d0" if build_platform == "osx-64" else
+               "61776a387f2ea2a515eb92bc1c520b6af6451148216244058f6ee2b4c012cd89" if build_platform == "osx-arm64" else
+               "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef" }}
 
 package:
   name: grpc_java_plugin
@@ -14,26 +21,10 @@ source:
     sha256: 67436b0b6666cd928dc6b7f32c738fce63c2b1b98984dbf351049af5203a853c
     patches:
       - patches/0001-Build-against-system-libprotobuf.patch
-  - if: build_platform == "linux-64"
-    then:
-      url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-linux-x86_64
-      sha256: 02c355741012603b703e2a8d07ded1212f92ec6eacdabdd552695f8083e7a594
-      file_name: bazel
-  - if: build_platform == "osx-64"
-    then:
-      url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-darwin-x86_64
-      sha256: 6a6d0a42d62fc3a4a391d0b9976f750191ccb9afa7b084e78d0daa0422b202d0
-      file_name: bazel
-  - if: build_platform == "linux-aarch64"
-    then:
-      url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-linux-arm64
-      sha256: 19b9c2f6dbb87d9d9c64a951e01b9e62abe8b8ea07550206609c62b7f0f12ae9
-      file_name: bazel
-  - if: build_platform == "osx-arm64"
-    then:
-      url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-darwin-arm64
-      sha256: 61776a387f2ea2a515eb92bc1c520b6af6451148216244058f6ee2b4c012cd89
-      file_name: bazel
+
+  - url: ${{ bz_base_url }}/${{ bz_version }}/bazel_nojdk-${{ bz_version }}-${{ bz_os }}-${{ bz_arch }}
+    sha256: ${{ bz_hash }}
+    file_name: bazel
 
 build:
   number: 0
