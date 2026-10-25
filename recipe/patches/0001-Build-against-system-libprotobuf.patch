@@ -1,4 +1,4 @@
-From 2914e8bccab94dbea35b17326e9a3665a8798702 Mon Sep 17 00:00:00 2001
+From 8dc2d7a0c8afcf5fe3ce2f005ce4eeb8374e7297 Mon Sep 17 00:00:00 2001
 From: "Uwe L. Korn" <uwelk@xhochy.com>
 Date: Sun, 21 Mar 2021 20:11:25 +0100
 Subject: [PATCH] Build against system libprotobuf
@@ -9,14 +9,14 @@ Subject: [PATCH] Build against system libprotobuf
  2 files changed, 12 insertions(+), 1 deletion(-)
 
 diff --git a/MODULE.bazel b/MODULE.bazel
-index 0a7b0f4ee..710187de6 100644
+index 3e8ec7b..8edcc2d 100644
 --- a/MODULE.bazel
 +++ b/MODULE.bazel
 @@ -54,13 +54,23 @@ bazel_dep(name = "bazel_jar_jar", version = "0.1.11.bcr.1")
  bazel_dep(name = "bazel_skylib", version = "1.7.1")
  bazel_dep(name = "googleapis", version = "0.0.0-20260514-1dbb1a14", repo_name = "com_google_googleapis")
  bazel_dep(name = "grpc-proto", version = "0.0.0-20240627-ec30f58.bcr.1", repo_name = "io_grpc_grpc_proto")
--bazel_dep(name = "protobuf", version = "35.1", repo_name = "com_google_protobuf")
+-bazel_dep(name = "protobuf", version = "36.0.bcr.1", repo_name = "com_google_protobuf")
 +bazel_dep(name = "platforms", version = "1.0.0")
 +bazel_dep(name = "protobuf", version = "PROTOC_VERSION", repo_name = "com_google_protobuf")
  bazel_dep(name = "rules_proto", version = "7.1.0")
@@ -38,10 +38,10 @@ index 0a7b0f4ee..710187de6 100644
      "@rules_android//rules/android_sdk_repository:rule.bzl",
      "android_sdk_repository_extension",
 diff --git a/compiler/BUILD.bazel b/compiler/BUILD.bazel
-index a9ffe77a5..a3de998eb 100644
+index 9aba56b..ec335ea 100644
 --- a/compiler/BUILD.bazel
 +++ b/compiler/BUILD.bazel
-@@ -14,6 +14,7 @@ cc_binary(
+@@ -15,6 +15,7 @@ cc_binary(
      visibility = ["//visibility:public"],
      deps = [
          "@abseil-cpp//absl/strings",
