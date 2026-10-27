@@ -27,7 +27,7 @@ source:
     file_name: bazel
 
 build:
-  number: 0
+  number: 1
   skip: win
 
 requirements:
