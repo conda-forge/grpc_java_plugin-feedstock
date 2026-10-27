@@ -31,7 +31,7 @@ source:
     sha256: 37017223885da29d8c42be781e8c11b84e71a3d9355b073d43b08a5dfa99229a            # [build_platform == "osx-arm64"]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
@@ -41,7 +41,7 @@ requirements:
     - {{ compiler('cxx') }}
     - openjdk
     - openjdk 21  # [linux]
-    - bazel-toolchain <0.5
+    - bazel-toolchain
     - libprotobuf
     - sed  # [osx]
   host:
