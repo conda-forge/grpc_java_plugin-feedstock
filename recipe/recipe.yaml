@@ -35,7 +35,7 @@ requirements:
     - ${{ stdlib('c') }}
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
-    - openjdk
+    - openjdk <26
     - if: linux
       then: openjdk 21.*
     - bazel-toolchain >=0.5.11
