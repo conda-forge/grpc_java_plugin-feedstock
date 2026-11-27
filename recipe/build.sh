@@ -9,6 +9,15 @@ if [[ "${target_platform}" == osx-* ]]; then
     export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
+# Compiler activation may set tool basenames only. bazel-toolchain embeds them as
+# paths under //bazel_toolchain, so relative names become missing sandbox files.
+if [[ "${target_platform}" == linux-* ]]; then
+    export GCC="$(command -v "${GCC}")"
+    export LD="$(command -v "${LD}")"
+    export NM="$(command -v "${NM}")"
+    export STRIP="$(command -v "${STRIP}")"
+fi
+
 source gen-bazel-toolchain
 
 pushd compiler
