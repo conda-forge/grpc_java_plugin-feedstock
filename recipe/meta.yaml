@@ -39,7 +39,7 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - openjdk
+    - openjdk <26
     - openjdk 21  # [linux]
     - bazel-toolchain <0.5
     - libprotobuf
